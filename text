@@ -1,0 +1,17 @@
+<ul class="gotoSideButton">
+			<li><div class="bg"></div></li>
+</ul>
+스타일은 다음과 같다.
+
+.gotoSideButton > li > .bg{position: absolute; left:0; top:0; z-index:-1; width:0%; height: 100%; background:rgba(255,255,255,0.1);}
+이제 제이쿼리를 적어보면 마우스이벤트를 이용해서 영역의 가로크기를 바꾸면 된다.
+
+$('.gotoSideButton > li').mouseenter(function(){
+	$(this).children('.bg').animate({'width':'100%'},200)
+})
+
+$('.gotoSideButton > li').mouseleave(function(){
+	$(this).children('.bg').animate({'width':'0%'},200)
+})
+결과를 확인해 보면
+[출처] 마우스 동작에 움직이는 배경애니메이션|작성자 3분강사
