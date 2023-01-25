@@ -1,54 +1,18 @@
-#menu {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: center;
-}
+/* Define the container for the menu */
+    .menu {
+      width: 200px; /* Set the width of the menu */
+      float: left; /* Float the menu to the left */
+      display: block; /* Display the menu as a block element */
+    }
 
-#menu li {
-  flex: 1;
-  text-align: center;
-  position: relative;
-}
+    /* Define the menu items */
+    .menu li {
+      list-style-type: none; /* Remove the bullet points from the menu items */
+      padding: 5px 0; /* Add some padding to the menu items */
+    }
 
-#menu li a {
-  text-decoration: none;
-  color: #333;
-  display: block;
-  padding: 20px;
-  font-size: 18px;
-  font-weight: 600;
-  transition: all 0.2s ease-in-out;
-}
-
-#menu li:hover a {
-  color: #fff;
-  background-color: #f44336;
-}
-
-#menu li ul {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #fff;
-  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.2);
-  min-width: 150px;
-  z-index: 1;
-}
-
-#menu li ul li {
-  display: block;
-  text-align: left;
-  padding: 10px;
-}
-
-#menu li ul li a {
-  color: #333;
-  font-size: 14px;
-}
-
-#menu li:hover ul {
-  display: block;
-}
+    /* Define the menu links */
+    .menu a {
+      color: black; /* Set the text color of the links */
+      text-decoration: none; /* Remove the underline from the links */
+      display: block; /* Display the links as block elements */
