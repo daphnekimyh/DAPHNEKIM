@@ -108,18 +108,18 @@ html
 
         
     /* Define the container for the main content */
-    .about {
+    #about {
       margin-left: 200px; /* Set the left margin to the width of the menu */
     }
-    .services {
+    #services {
       margin-left: 200px; /* Set the left margin to the width of the menu */
     }
-    .portfolio {
+    #portfolio {
       margin-left: 200px; /* Set the left margin to the width of the menu */
     }
-    .contact {
+    #contact {
       margin-left: 200px; /* Set the left margin to the width of the menu */
     }
-    .footer {
+    #footer {
       margin-left: 200px; /* Set the left margin to the width of the menu */
     }
