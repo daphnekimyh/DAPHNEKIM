@@ -16,8 +16,22 @@
       color: black; /* Set the text color of the links */
       text-decoration: none; /* Remove the underline from the links */
       display: block; /* Display the links as block elements */
+    }
 
         
     /* Define the container for the main content */
-    .main {
+    .about {
       margin-left: 200px; /* Set the left margin to the width of the menu */
+    }
+    .services {
+      margin-left: 200px; /* Set the left margin to the width of the menu */
+    }
+    .portfolio {
+      margin-left: 200px; /* Set the left margin to the width of the menu */
+    }
+    .contact {
+      margin-left: 200px; /* Set the left margin to the width of the menu */
+    }
+    .footer {
+      margin-left: 200px; /* Set the left margin to the width of the menu */
+    }
