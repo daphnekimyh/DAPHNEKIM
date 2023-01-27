@@ -12,6 +12,10 @@ function animateCSS(element, animationName, callback) {
     node.addEventListener('animationend', handleAnimationEnd)
 }
 
+/*scroll body*/
 window.addEventListener('scroll', () => {
   document.body.style.setProperty('--scroll',window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
 }, false);
+
+/*about info*/
+document.querySelectorAll('.button').forEach(button => button.innerHTML = '<div><span>' + button.textContent.trim().split('').join('</span><span>') + '</span></div>');
