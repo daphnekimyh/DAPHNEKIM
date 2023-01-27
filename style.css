@@ -1,9 +1,9 @@
 body{
     font-family: 'Raleway', sans-serif;
-    overflow-x:hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
     padding: 0;
     margin: 0;
-    min-height: 500vh;
     background-color: rgb(255, 255, 255);
     animation: body 1s linear;
       /* Pause the animation */
@@ -13,35 +13,51 @@ body{
       /* These last 2 properites clean up overshoot weirdness */
     animation-iteration-count: 1;
     animation-fill-mode: both;
-}
-@keyframes body {
-  to {
-    background-color: rgb(19, 48, 97);
-  }
+    box-sizing: border-box;
+    height: 100%;
+    
 }
 
-.progress {
-  height: 3px;
-  width: 0%;
-  background-color: #fff;
-  position: fixed;
-  top: 0;
-  left: 0;
-  animation: progress 1s linear;
-      /* Pause the animation */
-  animation-play-state: paused;
-      /* Bind the animation to scroll */
-  animation-delay: calc(var(--scroll) * -1s);
-      /* These last 2 properites clean up overshoot weirdness */
-  animation-iteration-count: 1;
-  animation-fill-mode: both;
+.container {
+  max-height: 100vh;
+    overflow-x: hidden;
+  overflow-y: scroll;
+  position: relative;
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
+  -webkit-overflow-scrolling: touch;
 }
-@keyframes progress {
-  to {
-    background-color: rgb(255, 228, 0);
-    width: 100%;
-  }
+
+.headline {
+  background-color: var(--color);
+  display: flex;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 700;
+  height: 100vh;
+  overflow: hidden;
+  perspective: 1000px;
+  scroll-snap-align: start;
+  width: 100vw;
 }
+.headline:nth-child(1) {
+  --color: #f9ca24;
+}
+.headline:nth-child(2) {
+  --color: #3498db;
+}
+.headline:nth-child(3) {
+  --color: #ff7979;
+}
+.headline:nth-child(4) {
+  --color: #1abc9c;
+}
+.headline:nth-child(5) {
+  --color: #e74c3c;
+}
+.headline:nth-child(6) {
+  --color: #f8c291;
+}
+
 .intro{
     margin-top: 15%;
     margin-left: 20%;
@@ -66,35 +82,120 @@ body{
 }
 
 .about{
-    margin-top: 22%;
-    margin-left: 6%;
+    margin-top: 5%;
+    margin-left: 4%;
     margin-bottom: 10%;
     background-color: ghostwhite;
-    height: 880px;
+    height: 770px;
     width: 90%;
+    border-radius: 0.5%;
 }
 .about-title{
     text-align: center;
     padding-top: 5%;
-    padding-bottom: 5%;
+    padding-bottom: 4%;
     font-size: 90px;
     font-weight: 800;
 }
 .about-info{
-    margin-bottom: 5%;
+    margin-bottom: 3%;
 }
-.about-info-set{
+.button {
+  --background: #2F3545;
+  --shadow: 0 2px 8px -1px rgba(18, 22, 33, 0.04);
+  --shadow-hover: 0 4px 20px -2px rgba(21, 25, 36, 0.5);
+  --duration: .32s;
+  --text: #fff;
+  --font-size: 16px;
+  --move-hover: -4px;
+  --font-shadow: var(--font-size);
+  padding: 16px 32px;
+  font-family: "Roboto";
+  font-weight: 500;
+  line-height: var(--font-size);
+  border-radius: 24px;
+  display: block;
+  outline: none;
+  text-decoration: none;
+  font-size: var(--font-size);
+  letter-spacing: 0.5px;
+  background: var(--background);
+  color: var(--text);
+  box-shadow: var(--shadow);
+  transform: translateY(var(--y)) translateZ(0);
+  transition: transform var(--duration) ease, box-shadow var(--duration) ease;
     margin: auto;
     margin-bottom: 1%;
-    height: 50px;
-    width: 250px;
-    border: 1px;
-    background-color: darkseagreen;
-    border-radius: 10px;
-    border-color: aqua;
-    padding-left: 1%;
-    vertical-align: bottom;
+    height: 25px;
+    width: 200px;
 }
+.button div {
+  display: flex;
+  overflow: hidden;
+  text-shadow: 0 var(--font-shadow) 0 var(--text);
+}
+.button div span {
+  display: block;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  font-style: normal;
+  transition: transform var(--duration) ease;
+  transform: translateY(var(--m)) translateZ(0);
+}
+.button div span:nth-child(1) {
+  transition-delay: 0.05s;
+}
+.button div span:nth-child(2) {
+  transition-delay: 0.1s;
+}
+.button div span:nth-child(3) {
+  transition-delay: 0.15s;
+}
+.button div span:nth-child(4) {
+  transition-delay: 0.2s;
+}
+.button div span:nth-child(5) {
+  transition-delay: 0.25s;
+}
+.button div span:nth-child(6) {
+  transition-delay: 0.3s;
+}
+.button div span:nth-child(7) {
+  transition-delay: 0.35s;
+}
+.button div span:nth-child(8) {
+  transition-delay: 0.4s;
+}
+.button div span:nth-child(9) {
+  transition-delay: 0.45s;
+}
+.button div span:nth-child(10) {
+  transition-delay: 0.5s;
+}
+.button div span:nth-child(11) {
+  transition-delay: 0.55s;
+}
+.button div span:nth-child(12) {
+  transition-delay: 0.6s;
+}
+.button div span:nth-child(13) {
+  transition-delay: 0.65s;
+}
+.button div span:nth-child(14) {
+  transition-delay: 0.70s;
+}
+.button div span:nth-child(15) {
+  transition-delay: 0.75s;
+}
+.button:hover {
+  --y: var(--move-hover);
+  --shadow: var(--shadow-hover);
+}
+.button:hover span {
+  --m: calc(var(--font-size) * -1);
+}
+
+
 .about-detail{
     margin-left: 40%;
 }
