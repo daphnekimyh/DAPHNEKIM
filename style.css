@@ -17,7 +17,6 @@ body{
     animation-fill-mode: both;
     box-sizing: border-box;
     height: 100%;
-    
 }
 
 .container {
@@ -42,7 +41,7 @@ body{
   width: 100vw;
 }
 .headline:nth-child(1) {
-  --color: #f9ca24;
+  --color: #fff;
 }
 .headline:nth-child(2) {
   --color: #3498db;
@@ -51,7 +50,7 @@ body{
   --color: #ff7979;
 }
 .headline:nth-child(4) {
-  --color: #1abc9c;
+  --color: #FFF;
 }
 .headline:nth-child(5) {
   --color: #e74c3c;
@@ -60,73 +59,128 @@ body{
   --color: #f8c291;
 }
 
-.intro{
-    transform: translate(40%,35%);
+/*intro page start*/
+.title-word {
+  animation: color-animation 4s linear infinite;
 }
-.waviy {
-    position: relative;
+
+.title-word-1 {
+  --color-1: #DF8453;
+  --color-2: #3D8DAE;
+  --color-3: #E4A9A8;
 }
-.waviy span {
-    position: relative;
-    display: inline-block;
-    font-size: calc((100vw/1240)*90);
-    font-weight: 600;
-    color: black;
+
+.title-word-2 {
+  --color-1: #DBAD4A;
+  --color-2: #ACCFCB;
+  --color-3: #17494D;
+}
+
+.title-word-3 {
+  --color-1: #ACCFCB;
+  --color-2: #E4A9A8;
+  --color-3: #ACCFCB;
+}
+
+.title-word-4 {
+  --color-1: #3D8DAE;
+  --color-2: #DF8453;
+  --color-3: #E4A9A8;
+}
+
+@keyframes color-animation {
+  0%    {color: var(--color-1)}
+  32%   {color: var(--color-1)}
+  33%   {color: var(--color-2)}
+  65%   {color: var(--color-2)}
+  66%   {color: var(--color-3)}
+  99%   {color: var(--color-3)}
+  100%  {color: var(--color-1)}
+}
+
+.container-title {
+    display: grid;
+    text-align: center;
+    height: 30vw;
+    position: absolute;
+    top: 29vh;
+    left: 11vw;
+}
+
+.title-1 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    font-size: 8.5vw;
     text-transform: uppercase;
-    animation: flip 2s infinite;
-    animation-delay: calc(.2s * var(--i))
+    position: absolute;
+    top: -3vw;
+    opacity: 50%;
+    text-shadow: 5px 5px black;
 }
-@keyframes flip {
-  0%,80% {
-    transform: rotateY(360deg) 
-  }
+.title-2 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+  font-size: 8.5vw;
+  text-transform: uppercase;
+    position: relative;
+    top: 2vw;
+    text-shadow: 5px 5px grey;
 }
 
 /*about page start*/
 .about{
-    margin-top: 3%;
+    margin-top: 40px;
     margin-left: 4%;
     margin-bottom: 10%;
     background-color: ghostwhite;
     height: 90%;
     width: 90%;
     border-radius: 5px;
+    font-family: "Raleway", sans-serif;
 }
 .about-title{
     text-align: center;
     padding-top: 5%;
     padding-bottom: 4%;
-    font-size: 90px;
+    font-size: 120px;
     font-weight: 800;
 }
 .about-info{
-    flex-direction: row;
     width: 60%;
     margin: auto;
     align-content: center;
-    height: 100px;
 }
-.about-info-first{
-    left: calc(50% - 220px);
-    top: calc(50% - 150px);
-    float: left;
-    position: absolute;
-    z-index: 100;
-}
-.about-info-second{
-    flex-direction: column;
-    white-space: nowrap;
-    font-family: "Raleway";
-    font-weight: 900;
-    font-size: 29px;
-    letter-spacing: 2px;
-    text-decoration: none;
+
+.about-info-telemail{
+    width: 400px;
     color: white;
-    position: absolute;
-    width: 450px;
-    top: calc(50% - 153px);
-    left: calc(50% - 50px);
+    margin: auto;
+    position: relative;
+    top: -20%;
+    left: 1%;
+    font-size: 30px;
 }
+.about-info-telemail div{
+    border-radius: 30px;
+    background-color: #ff4851;
+    padding: 9px;
+    padding-left: 6%;
+    margin-bottom: 12px;
+}
+.about-info-github{
+    display: flex;
+    position: relative;
+    z-index: 100;
+    float: left;
+    justify-content: center;
+    left: calc(50% - 140px);
+    margin-top: 20px;
+}
+.about-info-github-1{
+    margin-right: 30px;
+}
+
+
 .about-info-Github{
   -moz-transition: all 0.15s cubic-bezier(0.46, 0.01, 0.14, 1.35);
   -o-transition: all 0.15s cubic-bezier(0.46, 0.01, 0.14, 1.35);
@@ -147,19 +201,6 @@ body{
 
 .about-info-Github{
     position: relative;
-}
-.about-info-tel{
-    border-radius: 50px;
-    background-color: #ff4851;
-    padding-left: 4%;
-    margin-bottom: 12px;
-    height: 40px;
-}
-.about-info-email{
-    border-radius: 50px;
-    background-color: #ff4851;
-    padding-left: 4%;
-    height: 40px;
 }
 .about-info-Github:after {
   content: attr(href);
@@ -226,10 +267,13 @@ body{
   opacity: 1;
 }
 
+
+
 .about-detail{
-    margin-top: 10%;
+    margin-top: 140px;
     padding: 50px;
     text-align: center;
+    font-family: 'Kalam', cursive;
 }
 .text {
     line-height:1.8;
@@ -250,6 +294,7 @@ body{
     margin-bottom: 10%;
     height: 90%;
     width: 90%;
+    font-family: "Raleway";
 }
 .strength-title{
     position: relative;
@@ -268,7 +313,7 @@ body{
     position: relative;
     height: 100px;
     top: calc(50% - 390px);
-    left: calc(50% - 410px);
+    justify-content: center;
 }
 .language div{
     border: 5px solid white;
@@ -277,40 +322,40 @@ body{
     border-radius: 50px;
     line-height: 200%;
 }
-.language-card1{
-    position: absolute;
-    top: calc(50% - 150px);
-    width: 500px;
+.language-card{
+    position: relative;
+    width: 600px;
     height: 250px;
     border: 3px solid white;
     border-radius: 30px;
+    text-align: center;
+    background-color: white;
 }
-.language-card2{
-    position: absolute;
-    top: calc(50% + 50px);
-    left: calc(50% - 500px);
-    width: 500px;
-    height: 250px;
-    border: 3px solid white;
-    border-radius: 30px;
+.language-card-container-1{
+    display: flex;
+    position: relative;
+    z-index: 100;
+    justify-content: center;
+    margin-top: 50px;
 }
-.language-card3{
-    position: absolute;
-    top: calc(50% - 150px);
-    left: calc(50% - 70px);
-    width: 500px;
-    height: 250px;
-    border: 3px solid white;
-    border-radius: 30px;
+.language-card-1{
+    margin-right: 30px;
 }
-.language-card4{
-    position: absolute;
-    top: calc(50% + 50px);
-    left: calc(50% + 200px);
-    width: 500px;
-    height: 250px;
-    border: 3px solid white;
-    border-radius: 30px;
+.language-card-2{
+    
+}
+.language-card-container-2{
+    display: flex;
+    position: relative;
+    z-index: 100;
+    justify-content: center;
+    margin-top: 50px;
+}
+.language-card-3{
+    margin-right: 30px;
+}
+.language-card-4{
+    
 }
 
 /*school activity page start*/
@@ -331,76 +376,77 @@ body{
     font-weight: 600;
     text-shadow: 4px 4px white;
     z-index: 100;
+    font-family: 'Kalam', cursive;
 }
 .activity-title-box{
     position: absolute;
     background-color: rgb(200, 75, 49);
     width: 200px;
     height: 65px;
-    top: calc(25% + 110px);
+    top: calc(26% + 110px);
     left: 115px;
+}
+.activity-detail-container{
+    border-left: 6px solid rgb(200, 75, 49);
+    border-bottom: 6px solid rgb(200, 75, 49);
+    width: 700px;
+    height: 433px;
+    top: 400px;
+    left: 115px;
+    position: absolute;
 }
 .activity-detail{
     position: absolute;
-    top: calc(31% + 108px);
-    left: 115px;
-    width: calc(50% + 20px);
+    top: 12%;
+    left: 8%;
+    width: calc(70% + 20px);
     height: 41%;
     line-height:1.8;
     font-size: 27px;
-    border-left: 6px solid rgb(200, 75, 49);
     padding-left: 40px;
     padding-top: 30px;
+    
 }
-.activity-arrow{
-    left: 130px;
-    bottom: 12.7%;
-    transform: rotate(40deg);
-    position: absolute;
-    height: 3rem;
-    width: 6px;
-    background-color: rgb(200, 75, 49);
-}
+
 .school-title{
     position: absolute;
-    top: calc(35% + 100px);
+    top: calc(42% + 100px);
     right: 120px;
     text-align: center;
     font-size: 60px;
     font-weight: 600;
     text-shadow: 4px 4px white;
-    z-index: 100;    
+    z-index: 100;
+    font-family: 'Kalam', cursive;
 }
 .school-title-box{
     position: absolute;
     background-color: rgb(200, 75, 49);
-    width: 190px;
+    width: 155px;
     height: 65px;
-    top: calc(35% + 100px);
+    top: calc(42% + 107px);
     right: 115px;
 
 }
+.school-detail-container{
+    border-right: 6px solid rgb(200, 75, 49);
+    width: 1000px;
+    height: 433px;
+    top: 80px;
+    right: 115px;
+    position: absolute;
+}
 .school-detail{
     position: absolute;
-    top: calc(1% + 80px);
-    right: 115px;
+    top: 7%;
+    right: 8%;
     width: calc(50% + 20px);
     height: 35%;
     line-height:1.8;
     font-size: 27px;
-    border-right: 6px solid rgb(200, 75, 49);
     padding-right: 40px;
     padding-top: 50px;
     text-align: right;
-}
-.school-arrow{
-    right: 130px;
-    top: 9%;
-    transform: rotate(220deg);
-    position: absolute;
-    height: 3rem;
-    width: 6px;
-    background-color: rgb(200, 75, 49);
 }
 
 
